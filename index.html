@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheat Sheet emteka PSAS 2025 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ffd1dc;
+      --pink-light: #fff0f5;
+      --white: #ffffff;
+      --text: #5a3a6e;
+      --accent: #ff9ec9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--pink), var(--pink-light));
+      color: var(--text);
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* --- FLOATING BUBBLES --- */
+    .bubble {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      filter: blur(20px);
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .b1 { width: 150px; height: 150px; top: 10%; left: 5%; animation-delay: 0s; }
+    .b2 { width: 200px; height: 200px; bottom: 5%; right: 8%; animation-delay: 3s; }
+    .b3 { width: 120px; height: 120px; top: 40%; left: 15%; animation-delay: 7s; }
+    .b4 { width: 180px; height: 180px; bottom: 20%; left: 5%; animation-delay: 10s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(30px, -20px) scale(1.05); }
+      50% { transform: translate(-20px, 30px) scale(0.95); }
+      75% { transform: translate(20px, 20px) scale(1.02); }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(255, 180, 220, 0.3);
+      border: 2px solid rgba(255, 180, 220, 0.4);
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Nunito', cursive;
+      color: #d1479e;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(255,200,230,0.5);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #8a5a9e;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 245, 250, 0.7);
+      border-left: 4px solid var(--accent);
+    }
+
+    .section h2 {
+      color: #c23ea0;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+
+    .formula {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 1.1rem;
+      color: #a03a7e;
+      text-align: center;
+      border: 1px dashed #ffb6c1;
+    }
+
+    .steps {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+
+    .steps li {
+      margin-bottom: 6px;
+    }
+
+    .result {
+      font-weight: bold;
+      color: #d1479e;
+      margin-top: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #9a6aae;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 20px 15px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Bubbles -->
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="bubble b3"></div>
+  <div class="bubble b4"></div>
+
+  <div class="container">
+    <h1>✨ Cheat Sheet PSAS 2025 ✨</h1>
+    <p class="subtitle">Oleh @rcheleyn • manusya dnegan jiwa mualas tapi tetap pengen mencoba 💖</p>
+
+    <!-- Bagian 1-5 -->
+    <div class="section">
+      <h2>🔢 Nomor 1–5: Bunga & Anuitas</h2>
+      <div class="formula">M = M₀(1 + rt)  → bunga tunggal</div>
+      <div class="formula">M = M₀(1 + r/12)ⁿ → bunga majemuk</div>
+      <div class="formula">A = P · i(1+i)ⁿ / [(1+i)ⁿ – 1] → anuitas</div>
+      <ul class="steps">
+        <li><b>1:</b> Cari r dari 2M₀ → 3M₀ ⇒ t = 20</li>
+        <li><b>2:</b> n = 16 bulan, i = 0,005 ⇒ M ≈ 54.153.557</li>
+        <li><b>3:</b> Bunga = 2 juta ⇒ r = 20%</li>
+        <li><b>4:</b> (1+i)⁶⁰ = 1,5 ⇒ r ≈ 8,14%/thn</li>
+        <li><b>5:</b> Pinjaman = 60 jt ⇒ A ≈ 2.741.100</li>
+      </ul>
+    </div>
+
+    <!-- Bagian 6-12 -->
+    <div class="section">
+      <h2>🏡 Nomor 6–12: KPR & Anuitas Lanjutan</h2>
+      <div class="formula">Sisa = P(1+i)ᵗ – A·[(1+i)ᵗ – 1]/i</div>
+      <ul class="steps">
+        <li><b>6:</b> Setelah 120 bln, pokok ≈ 64,266 jt</li>
+        <li><b>7:</b> 10 Mar 2015 + 10 thn ⇒ angsuran terakhir: 5 Mar 2025</li>
+        <li><b>8:</b> Max pinjaman ≈ 197 jt ⇒ rumah max ≈ 219 jt → pilih 215,5 jt</li>
+        <li><b>9:</b> Pinjaman = 234 jt ⇒ hanya 25 & 30 thn yang angsurannya ≤ 2 jt</li>
+        <li><b>10:</b> Sisa pokok ≈ 117 jt > 75 jt ⇒ ❌ Tidak cukup</li>
+        <li><b>11:</b> A ≈ 3.581.225</li>
+        <li><b>12:</b> Pokok awal kecil ⇒ setelah 24 bln < 50% ⇒ ❌ Salah</li>
+      </ul>
+    </div>
+
+    <!-- Bagian Fungsi -->
+    <div class="section">
+      <h2>🧮 Nomor 13–17, 22: Fungsi</h2>
+      <div class="formula">(f∘g)(x) = f(g(x))</div>
+      <div class="formula">Invers: tukar x & y, selesaikan untuk y</div>
+      <ul class="steps">
+        <li><b>13:</b> f(g(x)) = 3(2x+5)–1 = 6x+14</li>
+        <li><b>14:</b> g(f(0)) = 5 ⇒ f(0)² + f(0) = 5 → diasumsikan = –3</li>
+        <li><b>15:</b> y = (3x–1)/x → x = 3 – 1/y → y = 1/(3–x)</li>
+        <li><b>17:</b> (g∘f)⁻¹(1) = (1–6)/(2–3) = 5</li>
+        <li><b>22:</b> 240/menit = 4/detik → B(t)=4t, B⁻¹(n)=n/4</li>
+      </ul>
+    </div>
+
+    <!-- Bagian Aplikasi -->
+    <div class="section">
+      <h2>🍎 Nomor 18–21, 23–25: Aplikasi & Konversi</h2>
+      <div class="formula">C = ⁵⁄₉(F–32), R = ⁴⁄₅C, K = C + 273</div>
+      <ul class="steps">
+        <li><b>18:</b> 5 kg → 250 kue → l(250) = 612.500</li>
+        <li><b>19:</b> k(8x)=480x ⇒ k(y)=60y ⇒ k(7)=420</li>
+        <li><b>20:</b> B(x) = 4x²+8x+124 → A, B, C benar</li>
+        <li><b>21:</b> 0,92·berat = 2 ⇒ berat ≈ 2,17 kg</li>
+        <li><b>23:</b> Benar: K(c)=c+273 & C(f)=⁵⁄₉(f–32)</li>
+        <li><b>24:</b> 300 K → 27°C → R = 21,6°</li>
+        <li><b>25:</b> 77°F = 298 K → suhu akhir < 298 K → B–E valid</li>
+      </ul>
+    </div>
+
+    <!-- Penutup -->
+    <footer>
+      ✨ Kamu luar biasa! Jangan pernah berhenti mencoba.  
+      <br>— Dibuat dengan cynta💖 dari @rcheleyn
+    </footer>
+  </div>
+</body>
+</html>
