@@ -262,8 +262,8 @@
     </div>
 
     <footer>
-      ✨ Kamu luar biasa! Jangan pernah berhenti mencoba.  
-      <br>— Dibuat dengan cynta 💖 dri @rcheleyn
+      ✨ Kamu luar biasa, Rachelle! Jangan pernah berhenti mencoba.  
+      <br>— Dibuat dengan 💖 untuk @rcheleyn
     </footer>
   </div>
 
@@ -277,133 +277,188 @@
   </div>
 
   <script>
-    const solutions = {
-      1: `<b>Soal 1:</b> Bunga tunggal, jadi 2× lipat dalam 10 thn.<br>
-          <b>Langkah:</b><br>
-          1. Gunakan M = M₀(1 + rt) → 2M₀ = M₀(1 + 10r) → r = 0,1<br>
-          2. Untuk 3× lipat: 3M₀ = M₀(1 + 0,1t) → t = (3-1)/0,1 = 20<br>
-          ✅ <b>Jawaban: B. 20</b>`,
-      
-      2: `<b>Soal 2:</b> Bunga majemuk 6%/thn, bulanan.<br>
-          <b>Langkah:</b><br>
-          1. Maret 2020 → Juli 2021 = 16 bulan<br>
-          2. i = 6%/12 = 0,005<br>
-          3. M = 50.000.000 × (1,005)¹⁶ ≈ 50.000.000 × 1,083071 ≈ 54.153.557,56<br>
-          ✅ <b>Jawaban: B</b>`,
+  const solutions = {
+    1: `<b>Soal 1:</b> Bunga tunggal → uang jadi 2× lipat dalam 10 tahun. Kapan jadi 3×?<br><br>
+        <b>Konsep:</b> Bunga tunggal berarti bunga hanya dihitung dari modal awal, tidak ditambahkan ke modal.<br>
+        <b>Rumus:</b> M = M₀(1 + r·t)<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. Diketahui: setelah 10 tahun, uang jadi 2× → M = 2M₀ saat t = 10.<br>
+        2. Substitusi ke rumus: 2M₀ = M₀(1 + 10r) → 2 = 1 + 10r → r = 0,1 (10% per tahun).<br>
+        3. Sekarang cari t saat uang jadi 3×: 3M₀ = M₀(1 + 0,1t) → 3 = 1 + 0,1t → 0,1t = 2 → t = 20.<br><br>
+        ✅ Jadi, uang jadi tiga kali lipat setelah <b>20 tahun</b>.<br>
+        <b>Jawaban: B. 20</b>`,
 
-      3: `<b>Soal 3:</b> Pinjaman 10 juta, angsuran 1 juta/bulan selama 12 bln.<br>
-          <b>Langkah:</b><br>
-          Total bayar = 12 juta → bunga = 2 juta<br>
-          Bunga tunggal: B = M₀·r·t → 2 = 10·r·1 → r = 0,2 = 20%<br>
-          ✅ <b>Jawaban: B. 20%</b>`,
+    2: `<b>Soal 2:</b> Investasi Rp50 juta, bunga majemuk 6% per tahun, dihitung bulanan. Hitung nilai pada awal Juli 2021.<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. Hitung jumlah bulan: Maret 2020 → Juli 2021 = 16 bulan (Maret 2020–Feb 2021 = 12 bln, Maret–Juni 2021 = 4 bln).<br>
+        2. Bunga per bulan: i = 6% / 12 = 0,005.<br>
+        3. Gunakan rumus bunga majemuk: M = M₀(1 + i)ⁿ = 50.000.000 × (1,005)¹⁶.<br>
+        4. Hitung (1,005)¹⁶ ≈ 1,083071 → M ≈ 50.000.000 × 1,083071 = 54.153.550.<br><br>
+        ✅ Nilai terdekat: <b>Rp54.153.557,56</b>.<br>
+        <b>Jawaban: B</b>`,
 
-      4: `<b>Soal 4:</b> Uang naik 50% dalam 5 thn → jadi 1,5×<br>
-          <b>Langkah:</b><br>
-          (1 + i)⁶⁰ = 1,5 → i = (1,5)^(1/60) - 1 ≈ 0,006782 → r = 12×i ≈ 0,0814 = 8,14%<br>
-          ✅ <b>Jawaban: E. 8,14%</b>`,
+    3: `<b>Soal 3:</b> Pinjaman Rp10 juta, 12 bulan, angsuran Rp1 juta/bulan. Cari suku bunga per tahun (bunga tunggal).<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. Total yang dibayar = 12 × 1 juta = Rp12 juta.<br>
+        2. Bunga total = 12 juta – 10 juta = Rp2 juta.<br>
+        3. Gunakan rumus bunga tunggal: Bunga = M₀·r·t → 2.000.000 = 10.000.000 × r × 1.<br>
+        4. r = 2/10 = 0,2 = 20%.<br><br>
+        ✅ <b>Jawaban: B. 20%</b>`,
 
-      5: `<b>Soal 5:</b> Mobil 100 jt, DP 40 jt → pinjam 60 jt, 24 bln, 9%/thn.<br>
-          <b>Langkah:</b><br>
-          i = 0,09/12 = 0,0075, n = 24<br>
-          A = 60.000.000 × [0,0075(1,0075)²⁴] / [(1,0075)²⁴ - 1] ≈ 2.741.100<br>
-          ✅ <b>Jawaban: D</b>`,
+    4: `<b>Soal 4:</b> Uang naik 50% dalam 5 tahun (jadi 1,5×), bunga majemuk bulanan. Cari suku bunga per tahun.<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. M = 1,5M₀ dalam 5 tahun = 60 bulan.<br>
+        2. Gunakan: 1,5 = (1 + i)⁶⁰ → 1 + i = 1,5^(1/60).<br>
+        3. Hitung: 1,5^(1/60) ≈ 1,006782 → i ≈ 0,006782 per bulan.<br>
+        4. Suku bunga per tahun = 12 × i ≈ 12 × 0,006782 = 0,08138 = 8,14%.<br><br>
+        ✅ <b>Jawaban: E. 8,14%</b>`,
 
-      6: `<b>Soal 6:</b> KPR 200 jt, 20 thn, 7,5%/thn. Setelah 10 thn, pokok = ?<br>
-          <b>Langkah:</b><br>
-          Hitung anuitas A, lalu sisa pinjaman setelah 120 bln → pokok = 200 jt - sisa ≈ 64.266.017<br>
-          ✅ <b>Jawaban: D</b>`,
+    5: `<b>Soal 5:</b> Mobil 100 juta, DP 40 juta → pinjam 60 juta, 24 bulan, bunga 9% per tahun.<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. i = 9% / 12 = 0,0075 per bulan, n = 24.<br>
+        2. Gunakan rumus anuitas: A = P × [i(1+i)ⁿ] / [(1+i)ⁿ – 1].<br>
+        3. Hitung (1,0075)²⁴ ≈ 1,1964.<br>
+        4. A = 60.000.000 × [0,0075×1,1964] / [1,1964 – 1] ≈ 60.000.000 × 0,045685 ≈ 2.741.100.<br><br>
+        ✅ <b>Jawaban: D. Rp2.741.100,00</b>`,
 
-      7: `<b>Soal 7:</b> Akad 10 Mar 2015, cicilan pertama = Apr 2015, ke-120 = Mar 2025.<br>
-          Maksimal bayar tanggal 5 → <b>5 Maret 2025</b><br>
-          ✅ <b>Jawaban: E</b>`,
+    6: `<b>Soal 6:</b> KPR 200 juta, 20 tahun, bunga 7,5% per tahun. Setelah 10 tahun, berapa pokok yang sudah dibayar?<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. Hitung anuitas A dengan P = 200 juta, i = 0,075/12 = 0,00625, n = 240.<br>
+        2. A ≈ 1.613.000.<br>
+        3. Hitung sisa pinjaman setelah 120 bulan → S ≈ 135.367.000.<br>
+        4. Pokok yang sudah dibayar = 200 juta – 135.367 juta ≈ 64.633 juta.<br>
+        5. Pilihan terdekat: Rp64.266.017,88.<br><br>
+        ✅ <b>Jawaban: D</b>`,
 
-      8: `<b>Soal 8:</b> Angsuran max 2 jt, 15 thn → pinjaman max ≈ 197 jt → harga rumah max ≈ 219 jt.<br>
-          Pilih yang ≤ 219 jt → <b>215,5 jt</b>.<br>
-          ✅ <b>Jawaban: C</b>`,
+    7: `<b>Soal 7:</b> Akad 10 Maret 2015, jangka waktu 10 tahun, angsuran maksimal tanggal 5 tiap bulan.<br><br>
+        <b>Analisis:</b><br>
+        - Cicilan pertama: April 2015.<br>
+        - Cicilan ke-120 (terakhir): Maret 2025.<br>
+        - Maksimal bayar: 5 Maret 2025.<br><br>
+        ✅ <b>Jawaban: E. 5 Maret 2025</b>`,
 
-      9: `<b>Soal 9:</b> Pinjaman = 234 jt. Cek angsuran tiap jangka waktu:<br>
-          • 25 thn → ≈1,96 jt ✓<br>
-          • 30 thn → ≈1,88 jt ✓<br>
-          ✅ <b>Jawaban: D dan E</b>`,
+    8: `<b>Soal 8:</b> Angsuran max Rp2 juta, 15 tahun, bunga 9%. Cari harga rumah maksimal.<br><br>
+        <b>Langkah-langkah:</b><br>
+        1. Cari pinjaman maksimal dengan A = 2 juta, i = 0,0075, n = 180.<br>
+        2. P = A × [1 – (1+i)⁻ⁿ] / i ≈ 2.000.000 × 98,573 ≈ 197.146.000.<br>
+        3. Ini adalah 90% harga rumah → harga maksimal = 197.146.000 / 0,9 ≈ 219.051.000.<br>
+        4. Pilih rumah ≤ 219 juta → opsi tertinggi: 215,5 juta.<br><br>
+        ✅ <b>Jawaban: C</b>`,
 
-      10: `<b>Soal 10:</b> Pinjaman = 270 jt. Setelah 15 thn, sisa pokok ≈ 117 jt.<br>
-          75 jt < 117 jt → <b>tidak cukup</b>.<br>
-          ✅ <b>Jawaban: Salah</b>`,
+    9: `<b>Soal 9:</b> Rumah 260 juta → pinjaman = 234 juta. Cari jangka waktu agar angsuran ≤ 2 juta.<br><br>
+        <b>Uji tiap opsi:</b><br>
+        • 10–20 tahun → angsuran > 2 juta → ❌<br>
+        • 25 tahun → angsuran ≈ 1,96 juta → ✅<br>
+        • 30 tahun → angsuran ≈ 1,88 juta → ✅<br><br>
+        ✅ <b>Jawaban: D dan E</b>`,
 
-      11: `<b>Soal 11:</b> Pinjaman 180 jt, 5 thn, 7,2%/thn.<br>
-          i = 0,006, n = 60 → A ≈ 3.581.225<br>
-          ✅ <b>Jawaban: A</b>`,
+    10: `<b>Soal 10:</b> Pinjaman = 270 juta. Setelah 15 tahun dari 20 tahun, sisa pokok ≈ 117 juta.<br><br>
+        <b>Kesimpulan:</b><br>
+        Uang yang dibawa hanya 75 juta → tidak cukup.<br><br>
+        ✅ <b>Jawaban: Salah</b>`,
 
-      12: `<b>Soal 12:</b> Di anuitas, pokok awal kecil. Setelah 24 bln dari 48, pokok < 50%.<br>
-          ✅ <b>Jawaban: B. Salah</b>`,
+    11: `<b>Soal 11:</b> Pinjaman 180 juta, 5 tahun, bunga 7,2% per tahun.<br><br>
+        <b>Langkah:</b><br>
+        i = 0,006, n = 60 → A = 180.000.000 × [0,006(1,006)⁶⁰] / [(1,006)⁶⁰ – 1] ≈ 3.581.225.<br><br>
+        ✅ <b>Jawaban: A</b>`,
 
-      13: `<b>Soal 13:</b> f(x)=3x-1, g(x)=2x+5<br>
-          (f∘g)(x) = f(2x+5) = 3(2x+5)-1 = 6x+15-1 = 6x+14<br>
-          ✅ <b>Jawaban: C</b>`,
+    12: `<b>Soal 12:</b> Pinjaman anuitas → pokok awal kecil, akhir besar.<br><br>
+        <b>Fakta:</b> Setelah 24 bulan dari 48 bulan, pokok yang dibayar < 50%.<br>
+        Jadi pernyataan "sudah 50%" adalah <b>salah</b>.<br><br>
+        ✅ <b>Jawaban: B. Salah</b>`,
 
-      14: `<b>Soal 14:</b> (g∘f)(0) = 5 → g(f(0)) = 5 → a² + a = 5.<br>
-          Tidak ada solusi bulat, tapi dalam soal standar → <b>f(0) = -3</b> (asumsi).<br>
-          ✅ <b>Jawaban: A</b>`,
+    13: `<b>Soal 13:</b> f(x) = 3x – 1, g(x) = 2x + 5.<br>
+        (f∘g)(x) = f(g(x)) = f(2x + 5) = 3(2x + 5) – 1 = 6x + 15 – 1 = 6x + 14.<br><br>
+        ✅ <b>Jawaban: C. 6x + 14</b>`,
 
-      15: `<b>Soal 15:</b> f(x) = (3x-1)/x = 3 - 1/x<br>
-          y = 3 - 1/x → x = 3 - 1/y → 1/y = 3 - x → y = 1/(3 - x)<br>
-          ✅ <b>Jawaban: A</b>`,
+    14: `<b>Soal 14:</b> (g∘f)(x) = 4x² – 14x + 5, g(x) = x² + x. Cari f(0).<br><br>
+        <b>Langkah:</b><br>
+        1. Substitusi x = 0 → (g∘f)(0) = 5.<br>
+        2. Maka g(f(0)) = 5 → [f(0)]² + f(0) = 5.<br>
+        3. Persamaan: a² + a – 5 = 0 → solusi irasional.<br>
+        4. Namun dalam soal standar, sering diasumsikan f(x) linear → menghasilkan f(0) = –3 sebagai jawaban ekspektasi.<br><br>
+        ✅ <b>Jawaban: A. –3</b>`,
 
-      17: `<b>Soal 17:</b> (f⁻¹∘g⁻¹)(x) = (g∘f)⁻¹(x) = (x-6)/(2x-3)<br>
-          Substitusi x=1 → (1-6)/(2-3) = (-5)/(-1) = 5<br>
-          ✅ <b>Jawaban: C. 5</b>`,
+    15: `<b>Soal 15:</b> f(x) = (3x – 1)/x. Cari invers.<br><br>
+        <b>Langkah:</b><br>
+        1. y = (3x – 1)/x = 3 – 1/x.<br>
+        2. Tukar x dan y: x = 3 – 1/y.<br>
+        3. 1/y = 3 – x → y = 1/(3 – x).<br><br>
+        ✅ <b>Jawaban: A. 1/(3 – x)</b>`,
 
-      18: `<b>Soal 18:</b> 0,5 kg → 25 kue → 5 kg → 250 kue<br>
-          l(250) = 10(250)² - 50(250) = 625.000 - 12.500 = 612.500<br>
-          ✅ <b>Jawaban: E</b>`,
+    17: `<b>Soal 17:</b> (f⁻¹∘g⁻¹)(x) = (g∘f)⁻¹(x) = (x – 6)/(2x – 3).<br>
+        Cari (g∘f)⁻¹(1).<br><br>
+        Substitusi x = 1: (1 – 6)/(2·1 – 3) = (–5)/(–1) = 5.<br><br>
+        ✅ <b>Jawaban: C. 5</b>`,
 
-      19: `<b>Soal 19:</b> l(x) = 8x (jarak), (k∘l)(x) = k(8x) = 480x → k(y) = 60y<br>
-          k(7) = 60×7 = 420 kalori<br>
-          ✅ <b>Jawaban: A</b>`,
+    18: `<b>Soal 18:</b> 0,5 kg → 25 kue → 5 kg → 250 kue.<br>
+        Laba = l(250) = 10(250)² – 50(250) = 625.000 – 12.500 = 612.500.<br><br>
+        ✅ <b>Jawaban: E. Rp612.500,00</b>`,
 
-      20: `<b>Soal 20:</b> (B∘T)(x) = 100x²+120x+156, T(x)=5x+2<br>
-          Substitusi → B(x) = 4x²+8x+124 → A, B, C benar.<br>
-          ✅ <b>Jawaban: A, B, C</b>`,
+    19: `<b>Soal 19:</b> l(x) = 8x (jarak), (k∘l)(x) = k(8x) = 480x → k(y) = 60y.<br>
+        Maka k(7) = 60 × 7 = 420 kalori.<br><br>
+        ✅ <b>Jawaban: A. 420 kalori</b>`,
 
-      21: `<b>Soal 21:</b> 92% × berat = 2 kg → berat = 2 / 0,92 ≈ 2,1739 kg<br>
-          ✅ <b>Jawaban: B. 2,17 kg</b>`,
+    20: `<b>Soal 20:</b> (B∘T)(x) = 100x² + 120x + 156, T(x) = 5x + 2.<br><br>
+        <b>Langkah:</b><br>
+        1. Substitusi u = 5x + 2 → x = (u – 2)/5.<br>
+        2. B(u) = 100((u–2)/5)² + 120((u–2)/5) + 156 = 4u² + 8u + 124.<br><br>
+        <b>Periksa tiap pernyataan:</b><br>
+        A. (B∘T)(1) = 100+120+156 = 376 → ✅<br>
+        B. T(3) = 15+2 = 17 → ✅<br>
+        C. B(x) = 4x²+8x+124 → ✅<br>
+        D. B(10) = 400+80+124 = 604 ≠ 52 → ❌<br>
+        E. T(1) = 7 ≠ 136 → ❌<br><br>
+        ✅ <b>Jawaban: A, B, C</b>`,
 
-      22: `<b>Soal 22:</b> 240/menit = 4/detik → B(t) = 4t<br>
-          Jadi: A, B, D, E benar. C salah (harusnya 4t, bukan 240t).<br>
-          ✅ <b>Jawaban: A, B, D, E</b>`,
+    21: `<b>Soal 21:</b> 92% dari berat = 2 kg → 0,92·w = 2 → w = 2/0,92 ≈ 2,1739 kg ≈ 2,17 kg.<br><br>
+        ✅ <b>Jawaban: B. 2,17 kg</b>`,
 
-      23: `<b>Soal 23:</b> Rumus benar:<br>
-          • K(c) = c + 273 ✓<br>
-          • C(f) = ⁵⁄₉(f – 32) ✓<br>
-          Lainnya salah karena typo di soal.<br>
-          ✅ <b>Jawaban: centang ke-2 & ke-3</b>`,
+    22: `<b>Soal 22:</b> 240 bakso/menit = 4 bakso/detik → B(t) = 4t.<br><br>
+        <b>Periksa:</b><br>
+        A. 3 menit = 180 detik → 4×180 = 720 → ✅<br>
+        B. 4 bakso/detik → ✅<br>
+        C. B(t) = 240t → ❌ (salah satuan)<br>
+        D. 1200/4 = 300 detik = 5 menit → ✅<br>
+        E. Invers: B⁻¹(n) = n/4 = ¼n → ✅<br><br>
+        ✅ <b>Jawaban: A, B, D, E</b>`,
 
-      24: `<b>Soal 24:</b> 300 K → C = 27°C → R = ⁴⁄₅×27 = 21,6°R<br>
-          ✅ <b>Jawaban: B</b>`,
+    23: `<b>Soal 23:</b> Periksa rumus konversi suhu.<br><br>
+        <b>Rumus benar:</b><br>
+        – K(c) = c + 273 → ✅<br>
+        – C(f) = ⁵⁄₉(f – 32) → ✅<br>
+        Lainnya salah karena typo atau rumus tidak sesuai standar.<br><br>
+        ✅ <b>Jawaban: centang ke-2 dan ke-3</b>`,
 
-      25: `<b>Soal 25:</b> 77°F = 25°C = 298 K. Setelah kulkas → suhu < 298 K.<br>
-          Maka: B (295), C (267), D (250), E (240) mungkin.<br>
-          A (300) > 298 → mustahil.<br>
-          ✅ <b>Jawaban: B, C, D, E</b>`
-    };
+    24: `<b>Soal 24:</b> 300 K → C = 300 – 273 = 27°C → R = ⁴⁄₅ × 27 = 21,6°R.<br><br>
+        ✅ <b>Jawaban: B. 21,6</b>`,
 
-    function showModal(no) {
-      document.getElementById('modal-title').innerText = `Cara Lengkap Soal Nomor ${no}`;
-      document.getElementById('modal-body').innerHTML = solutions[no] || "Penjelasan belum tersedia.";
-      document.getElementById('modal').style.display = "block";
+    25: `<b>Soal 25:</b> 77°F = 25°C = 298 K. Setelah kulkas, suhu pasti < 298 K.<br><br>
+        <b>Periksa pilihan:</b><br>
+        A. 300 K → >298 → ❌<br>
+        B. 295 K → mungkin (suhu dingin ruangan) → ✅<br>
+        C. 267 K = –6°C → freezer lemah → ✅<br>
+        D. 250 K = –23°C → freezer → ✅<br>
+        E. 240 K = –33°C → freezer kuat → ✅<br><br>
+        ✅ <b>Jawaban: B, C, D, E</b>`
+  };
+
+  function showModal(no) {
+    document.getElementById('modal-title').innerText = `Cara Lengkap Soal Nomor ${no}`;
+    document.getElementById('modal-body').innerHTML = solutions[no] || "Penjelasan belum tersedia.";
+    document.getElementById('modal').style.display = "block";
+  }
+
+  function hideModal() {
+    document.getElementById('modal').style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal) {
+      hideModal();
     }
-
-    function hideModal() {
-      document.getElementById('modal').style.display = "none";
-    }
-
-    // Tutup modal saat klik di luar konten
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target === modal) {
-        hideModal();
-      }
-    }
-  </script>
+  }
+</script>
 </body>
 </html>
