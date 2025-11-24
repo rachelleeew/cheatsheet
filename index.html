@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cheat Sheet emteka PSAS 2025 💖</title>
+  <title>Cheat Sheet PSAS 2025 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -12,6 +12,7 @@
       --white: #ffffff;
       --text: #5a3a6e;
       --accent: #ff9ec9;
+      --popup-bg: #fff9fb;
     }
 
     * {
@@ -96,14 +97,23 @@
 
     .formula {
       background: white;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      border-radius: 12px;
+      margin: 12px 0;
       font-family: monospace;
       font-size: 1.1rem;
       color: #a03a7e;
       text-align: center;
       border: 1px dashed #ffb6c1;
+      position: relative;
+    }
+
+    .formula-desc {
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: 4px;
+      color: #7a4a8e;
+      font-family: 'Quicksand', sans-serif;
     }
 
     .steps {
@@ -112,13 +122,14 @@
     }
 
     .steps li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      color: #d1479e;
+      text-decoration: underline;
     }
 
-    .result {
-      font-weight: bold;
-      color: #d1479e;
-      margin-top: 8px;
+    .steps li:hover {
+      color: #ff69b4;
     }
 
     footer {
@@ -128,9 +139,50 @@
       color: #9a6aae;
     }
 
+    /* --- MODAL --- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+      background: var(--popup-bg);
+      margin: 5% auto;
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 10px 30px rgba(255,100,180,0.3);
+      border: 2px solid var(--accent);
+      position: relative;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #d1479e;
+      font-weight: bold;
+    }
+
+    .close-btn:hover { color: #ff1493; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     @media (max-width: 600px) {
       .container { padding: 20px 15px; }
       h1 { font-size: 1.8rem; }
+      .modal-content { padding: 20px 15px; }
     }
   </style>
 </head>
@@ -143,20 +195,26 @@
 
   <div class="container">
     <h1>✨ Cheat Sheet PSAS 2025 ✨</h1>
-    <p class="subtitle">Oleh @rcheleyn • manusya dnegan jiwa mualas tapi tetap pengen mencoba 💖</p>
+    <p class="subtitle">Oleh @rcheleyn • Klik nomor soal untuk lihat cara lengkap! 💖</p>
 
     <!-- Bagian 1-5 -->
     <div class="section">
       <h2>🔢 Nomor 1–5: Bunga & Anuitas</h2>
-      <div class="formula">M = M₀(1 + rt)  → bunga tunggal</div>
-      <div class="formula">M = M₀(1 + r/12)ⁿ → bunga majemuk</div>
-      <div class="formula">A = P · i(1+i)ⁿ / [(1+i)ⁿ – 1] → anuitas</div>
+      <div class="formula">M = M₀(1 + r·t)</div>
+      <div class="formula-desc">M = jumlah akhir, M₀ = modal awal, r = suku bunga per tahun, t = waktu (tahun)</div>
+      
+      <div class="formula">M = M₀(1 + r/12)ⁿ</div>
+      <div class="formula-desc">n = jumlah bulan, r/12 = bunga per bulan</div>
+      
+      <div class="formula">A = P · [i(1+i)ⁿ] / [(1+i)ⁿ – 1]</div>
+      <div class="formula-desc">A = angsuran bulanan, P = pinjaman, i = bunga per bulan, n = jumlah bulan</div>
+      
       <ul class="steps">
-        <li><b>1:</b> Cari r dari 2M₀ → 3M₀ ⇒ t = 20</li>
-        <li><b>2:</b> n = 16 bulan, i = 0,005 ⇒ M ≈ 54.153.557</li>
-        <li><b>3:</b> Bunga = 2 juta ⇒ r = 20%</li>
-        <li><b>4:</b> (1+i)⁶⁰ = 1,5 ⇒ r ≈ 8,14%/thn</li>
-        <li><b>5:</b> Pinjaman = 60 jt ⇒ A ≈ 2.741.100</li>
+        <li onclick="showModal(1)">1. Uang jadi 3× lipat → t = ?</li>
+        <li onclick="showModal(2)">2. Investasi Rp50 juta → Juli 2021 = ?</li>
+        <li onclick="showModal(3)">3. Pinjaman koperasi → suku bunga?</li>
+        <li onclick="showModal(4)">4. Uang naik 50% dalam 5 thn → r = ?</li>
+        <li onclick="showModal(5)">5. Kredit mobil → angsuran?</li>
       </ul>
     </div>
 
@@ -164,51 +222,188 @@
     <div class="section">
       <h2>🏡 Nomor 6–12: KPR & Anuitas Lanjutan</h2>
       <div class="formula">Sisa = P(1+i)ᵗ – A·[(1+i)ᵗ – 1]/i</div>
+      <div class="formula-desc">Sisa = sisa pinjaman setelah t bulan</div>
       <ul class="steps">
-        <li><b>6:</b> Setelah 120 bln, pokok ≈ 64,266 jt</li>
-        <li><b>7:</b> 10 Mar 2015 + 10 thn ⇒ angsuran terakhir: 5 Mar 2025</li>
-        <li><b>8:</b> Max pinjaman ≈ 197 jt ⇒ rumah max ≈ 219 jt → pilih 215,5 jt</li>
-        <li><b>9:</b> Pinjaman = 234 jt ⇒ hanya 25 & 30 thn yang angsurannya ≤ 2 jt</li>
-        <li><b>10:</b> Sisa pokok ≈ 117 jt > 75 jt ⇒ ❌ Tidak cukup</li>
-        <li><b>11:</b> A ≈ 3.581.225</li>
-        <li><b>12:</b> Pokok awal kecil ⇒ setelah 24 bln < 50% ⇒ ❌ Salah</li>
+        <li onclick="showModal(6)">6. Pokok setelah 10 thn?</li>
+        <li onclick="showModal(7)">7. Tanggal angsuran terakhir?</li>
+        <li onclick="showModal(8)">8. Harga rumah terjangkau?</li>
+        <li onclick="showModal(9)">9. Jangka waktu membeli rumah 260 jt?</li>
+        <li onclick="showModal(10)">10. Lunas dini cukup dengan 75 jt?</li>
+        <li onclick="showModal(11)">11. Angsuran mobil 180 jt?</li>
+        <li onclick="showModal(12)">12. Pokok sudah 50% setelah 24 bln?</li>
       </ul>
     </div>
 
     <!-- Bagian Fungsi -->
     <div class="section">
       <h2>🧮 Nomor 13–17, 22: Fungsi</h2>
-      <div class="formula">(f∘g)(x) = f(g(x))</div>
-      <div class="formula">Invers: tukar x & y, selesaikan untuk y</div>
       <ul class="steps">
-        <li><b>13:</b> f(g(x)) = 3(2x+5)–1 = 6x+14</li>
-        <li><b>14:</b> g(f(0)) = 5 ⇒ f(0)² + f(0) = 5 → diasumsikan = –3</li>
-        <li><b>15:</b> y = (3x–1)/x → x = 3 – 1/y → y = 1/(3–x)</li>
-        <li><b>17:</b> (g∘f)⁻¹(1) = (1–6)/(2–3) = 5</li>
-        <li><b>22:</b> 240/menit = 4/detik → B(t)=4t, B⁻¹(n)=n/4</li>
+        <li onclick="showModal(13)">13. (f∘g)(x) = ?</li>
+        <li onclick="showModal(14)">14. f(0) = ?</li>
+        <li onclick="showModal(15)">15. Invers f(x) = ?</li>
+        <li onclick="showModal(17)">17. (g∘f)⁻¹(1) = ?</li>
+        <li onclick="showModal(22)">22. Mesin bakso → pernyataan benar?</li>
       </ul>
     </div>
 
     <!-- Bagian Aplikasi -->
     <div class="section">
       <h2>🍎 Nomor 18–21, 23–25: Aplikasi & Konversi</h2>
-      <div class="formula">C = ⁵⁄₉(F–32), R = ⁴⁄₅C, K = C + 273</div>
+      <div class="formula">C = ⁵⁄₉(F–32),  R = ⁴⁄₅C,  K = C + 273</div>
       <ul class="steps">
-        <li><b>18:</b> 5 kg → 250 kue → l(250) = 612.500</li>
-        <li><b>19:</b> k(8x)=480x ⇒ k(y)=60y ⇒ k(7)=420</li>
-        <li><b>20:</b> B(x) = 4x²+8x+124 → A, B, C benar</li>
-        <li><b>21:</b> 0,92·berat = 2 ⇒ berat ≈ 2,17 kg</li>
-        <li><b>23:</b> Benar: K(c)=c+273 & C(f)=⁵⁄₉(f–32)</li>
-        <li><b>24:</b> 300 K → 27°C → R = 21,6°</li>
-        <li><b>25:</b> 77°F = 298 K → suhu akhir < 298 K → B–E valid</li>
+        <li onclick="showModal(18)">18. Laba 5 kg tepung?</li>
+        <li onclick="showModal(19)">19. Kalori lari 7 km?</li>
+        <li onclick="showModal(20)">20. Bakteri & suhu → pernyataan benar?</li>
+        <li onclick="showModal(21)">21. Berat semangka?</li>
+        <li onclick="showModal(23)">23. Konversi suhu → pernyataan benar?</li>
+        <li onclick="showModal(24)">24. 300 K → °R?</li>
+        <li onclick="showModal(25)">25. 77°F → berapa K setelah kulkas?</li>
       </ul>
     </div>
 
-    <!-- Penutup -->
     <footer>
       ✨ Kamu luar biasa! Jangan pernah berhenti mencoba.  
-      <br>— Dibuat dengan cynta💖 dari @rcheleyn
+      <br>— Dibuat dengan cynta 💖 dri @rcheleyn
     </footer>
   </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="hideModal()">&times;</span>
+      <h2 id="modal-title">Cara Lengkap Soal #</h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const solutions = {
+      1: `<b>Soal 1:</b> Bunga tunggal, jadi 2× lipat dalam 10 thn.<br>
+          <b>Langkah:</b><br>
+          1. Gunakan M = M₀(1 + rt) → 2M₀ = M₀(1 + 10r) → r = 0,1<br>
+          2. Untuk 3× lipat: 3M₀ = M₀(1 + 0,1t) → t = (3-1)/0,1 = 20<br>
+          ✅ <b>Jawaban: B. 20</b>`,
+      
+      2: `<b>Soal 2:</b> Bunga majemuk 6%/thn, bulanan.<br>
+          <b>Langkah:</b><br>
+          1. Maret 2020 → Juli 2021 = 16 bulan<br>
+          2. i = 6%/12 = 0,005<br>
+          3. M = 50.000.000 × (1,005)¹⁶ ≈ 50.000.000 × 1,083071 ≈ 54.153.557,56<br>
+          ✅ <b>Jawaban: B</b>`,
+
+      3: `<b>Soal 3:</b> Pinjaman 10 juta, angsuran 1 juta/bulan selama 12 bln.<br>
+          <b>Langkah:</b><br>
+          Total bayar = 12 juta → bunga = 2 juta<br>
+          Bunga tunggal: B = M₀·r·t → 2 = 10·r·1 → r = 0,2 = 20%<br>
+          ✅ <b>Jawaban: B. 20%</b>`,
+
+      4: `<b>Soal 4:</b> Uang naik 50% dalam 5 thn → jadi 1,5×<br>
+          <b>Langkah:</b><br>
+          (1 + i)⁶⁰ = 1,5 → i = (1,5)^(1/60) - 1 ≈ 0,006782 → r = 12×i ≈ 0,0814 = 8,14%<br>
+          ✅ <b>Jawaban: E. 8,14%</b>`,
+
+      5: `<b>Soal 5:</b> Mobil 100 jt, DP 40 jt → pinjam 60 jt, 24 bln, 9%/thn.<br>
+          <b>Langkah:</b><br>
+          i = 0,09/12 = 0,0075, n = 24<br>
+          A = 60.000.000 × [0,0075(1,0075)²⁴] / [(1,0075)²⁴ - 1] ≈ 2.741.100<br>
+          ✅ <b>Jawaban: D</b>`,
+
+      6: `<b>Soal 6:</b> KPR 200 jt, 20 thn, 7,5%/thn. Setelah 10 thn, pokok = ?<br>
+          <b>Langkah:</b><br>
+          Hitung anuitas A, lalu sisa pinjaman setelah 120 bln → pokok = 200 jt - sisa ≈ 64.266.017<br>
+          ✅ <b>Jawaban: D</b>`,
+
+      7: `<b>Soal 7:</b> Akad 10 Mar 2015, cicilan pertama = Apr 2015, ke-120 = Mar 2025.<br>
+          Maksimal bayar tanggal 5 → <b>5 Maret 2025</b><br>
+          ✅ <b>Jawaban: E</b>`,
+
+      8: `<b>Soal 8:</b> Angsuran max 2 jt, 15 thn → pinjaman max ≈ 197 jt → harga rumah max ≈ 219 jt.<br>
+          Pilih yang ≤ 219 jt → <b>215,5 jt</b>.<br>
+          ✅ <b>Jawaban: C</b>`,
+
+      9: `<b>Soal 9:</b> Pinjaman = 234 jt. Cek angsuran tiap jangka waktu:<br>
+          • 25 thn → ≈1,96 jt ✓<br>
+          • 30 thn → ≈1,88 jt ✓<br>
+          ✅ <b>Jawaban: D dan E</b>`,
+
+      10: `<b>Soal 10:</b> Pinjaman = 270 jt. Setelah 15 thn, sisa pokok ≈ 117 jt.<br>
+          75 jt < 117 jt → <b>tidak cukup</b>.<br>
+          ✅ <b>Jawaban: Salah</b>`,
+
+      11: `<b>Soal 11:</b> Pinjaman 180 jt, 5 thn, 7,2%/thn.<br>
+          i = 0,006, n = 60 → A ≈ 3.581.225<br>
+          ✅ <b>Jawaban: A</b>`,
+
+      12: `<b>Soal 12:</b> Di anuitas, pokok awal kecil. Setelah 24 bln dari 48, pokok < 50%.<br>
+          ✅ <b>Jawaban: B. Salah</b>`,
+
+      13: `<b>Soal 13:</b> f(x)=3x-1, g(x)=2x+5<br>
+          (f∘g)(x) = f(2x+5) = 3(2x+5)-1 = 6x+15-1 = 6x+14<br>
+          ✅ <b>Jawaban: C</b>`,
+
+      14: `<b>Soal 14:</b> (g∘f)(0) = 5 → g(f(0)) = 5 → a² + a = 5.<br>
+          Tidak ada solusi bulat, tapi dalam soal standar → <b>f(0) = -3</b> (asumsi).<br>
+          ✅ <b>Jawaban: A</b>`,
+
+      15: `<b>Soal 15:</b> f(x) = (3x-1)/x = 3 - 1/x<br>
+          y = 3 - 1/x → x = 3 - 1/y → 1/y = 3 - x → y = 1/(3 - x)<br>
+          ✅ <b>Jawaban: A</b>`,
+
+      17: `<b>Soal 17:</b> (f⁻¹∘g⁻¹)(x) = (g∘f)⁻¹(x) = (x-6)/(2x-3)<br>
+          Substitusi x=1 → (1-6)/(2-3) = (-5)/(-1) = 5<br>
+          ✅ <b>Jawaban: C. 5</b>`,
+
+      18: `<b>Soal 18:</b> 0,5 kg → 25 kue → 5 kg → 250 kue<br>
+          l(250) = 10(250)² - 50(250) = 625.000 - 12.500 = 612.500<br>
+          ✅ <b>Jawaban: E</b>`,
+
+      19: `<b>Soal 19:</b> l(x) = 8x (jarak), (k∘l)(x) = k(8x) = 480x → k(y) = 60y<br>
+          k(7) = 60×7 = 420 kalori<br>
+          ✅ <b>Jawaban: A</b>`,
+
+      20: `<b>Soal 20:</b> (B∘T)(x) = 100x²+120x+156, T(x)=5x+2<br>
+          Substitusi → B(x) = 4x²+8x+124 → A, B, C benar.<br>
+          ✅ <b>Jawaban: A, B, C</b>`,
+
+      21: `<b>Soal 21:</b> 92% × berat = 2 kg → berat = 2 / 0,92 ≈ 2,1739 kg<br>
+          ✅ <b>Jawaban: B. 2,17 kg</b>`,
+
+      22: `<b>Soal 22:</b> 240/menit = 4/detik → B(t) = 4t<br>
+          Jadi: A, B, D, E benar. C salah (harusnya 4t, bukan 240t).<br>
+          ✅ <b>Jawaban: A, B, D, E</b>`,
+
+      23: `<b>Soal 23:</b> Rumus benar:<br>
+          • K(c) = c + 273 ✓<br>
+          • C(f) = ⁵⁄₉(f – 32) ✓<br>
+          Lainnya salah karena typo di soal.<br>
+          ✅ <b>Jawaban: centang ke-2 & ke-3</b>`,
+
+      24: `<b>Soal 24:</b> 300 K → C = 27°C → R = ⁴⁄₅×27 = 21,6°R<br>
+          ✅ <b>Jawaban: B</b>`,
+
+      25: `<b>Soal 25:</b> 77°F = 25°C = 298 K. Setelah kulkas → suhu < 298 K.<br>
+          Maka: B (295), C (267), D (250), E (240) mungkin.<br>
+          A (300) > 298 → mustahil.<br>
+          ✅ <b>Jawaban: B, C, D, E</b>`
+    };
+
+    function showModal(no) {
+      document.getElementById('modal-title').innerText = `Cara Lengkap Soal Nomor ${no}`;
+      document.getElementById('modal-body').innerHTML = solutions[no] || "Penjelasan belum tersedia.";
+      document.getElementById('modal').style.display = "block";
+    }
+
+    function hideModal() {
+      document.getElementById('modal').style.display = "none";
+    }
+
+    // Tutup modal saat klik di luar konten
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        hideModal();
+      }
+    }
+  </script>
 </body>
 </html>
